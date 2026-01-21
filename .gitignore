@@ -1,0 +1,31 @@
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build outputs
+dist/
+build/
+
+# Dependencies
+node_modules/
+
+# Optional
+*.log
+.DS_Store
+coverage/
+.parcel-cache/
+
+# Local development files
+.cache/
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini

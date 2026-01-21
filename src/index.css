@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+@layer base {
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .sport-gradient {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sport-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    animation: bannerRotate 20s infinite;
+    z-index: -1;
+  }
+
+  
+  .btn-primary {
+    @apply bg-sport-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-sport-secondary transition-colors dark:bg-blue-600 dark:hover:bg-blue-700;
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-sport-primary text-sport-primary px-6 py-3 rounded-lg font-semibold hover:bg-sport-primary hover:text-white transition-colors dark:border-blue-500 dark:text-blue-400 dark:hover:bg-blue-600;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bannerRotate {
+  0%, 25% {
+    background-image: url("/images/banner3.png");
+    opacity: 1;
+  }
+  26%, 50% {
+    background-image: url("/images/banner5.jpeg");
+    opacity: 1;
+  }
+  51%, 75% {
+    background-image: url("/images/banner3.jpeg");
+    opacity: 1;
+  }
+  76%, 100% {
+    background-image: url("/images/banner4.jpeg");
+    opacity: 1;
+  }
+}
+
+.animate-slideDown {
+  animation: slideDown 0.3s ease-out;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* body.dark {
+  @apply bg-gray-900 text-gray-100;
+} */
